@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+// vim: set ft=javascript:
+
+var assert = require('basic-assert');
+var compare = require('./alphanumeric-sort').compare;
+var preprocess = require('./alphanumeric-sort').preprocess;
+
+// Basic assumptions.
+
+assert.lt(compare("0", "1"), 0);
+assert.lt(compare("foo1", "foo2"), 0);
+
+// Preprocess
+
+assert.eq(preprocess('foo123bar'), 'foo00000000000000000123bar');
+assert.eq(preprocess('foo123bar9zot'), 'foo00000000000000000123bar00000000000000000009zot');
+assert.eq(preprocess('x5'),                     'x00000000000000000005');
+assert.eq(preprocess('x0000000000005'),         'x00000000000000000005');
+assert.eq(preprocess('x00000000000000000005'),  'x00000000000000000005');
+
+// Document the limits of preprocessor
+assert.eq(preprocess('x000000000000000000005'), 'x000000000000000000005');
+
+var arr = ["a1", "a10", "a2"];
+assert.eq(arr.sort(),        ["a1", "a10", "a2"]);
+assert.eq(arr.sort(compare), ["a1", "a2", "a10"]);
+
+
