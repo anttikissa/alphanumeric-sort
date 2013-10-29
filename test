@@ -25,4 +25,17 @@ var arr = ["a1", "a10", "a2"];
 assert.eq(arr.sort(),        ["a1", "a10", "a2"]);
 assert.eq(arr.sort(compare), ["a1", "a2", "a10"]);
 
+assert.eq(
+	["file 100.txt", "file 5.txt", "file 39.txt"].sort(compare),
+	["file 5.txt", "file 39.txt", "file 100.txt"]);
+
+function readFile(filename) {
+	var fs = require('fs');
+	var lines = fs.readFileSync(filename, "utf8").trim().split('\n');
+	return lines;
+}
+
+assert.eq(
+	readFile("test1.txt").sort(compare),
+	readFile("test1-output.txt"));
 
