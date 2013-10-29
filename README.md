@@ -24,7 +24,13 @@ produces)
 
 The library provides a comparator that can be fed to `Array.prototype.sort`.
 
-	var compare = require('./alphanumeric-sort').compare;
+First you do
+
+	> npm install alphanumeric-sort
+
+And then you do
+
+	var compare = require('alphanumeric-sort').compare;
 
 	["file 100.txt", "file 5.txt", "file 39.txt"].sort(compare);
 	//=> ["file 5.txt", "file 39.txt", "file 100.txt"]
