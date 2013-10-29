@@ -1,6 +1,6 @@
 {
   "name": "alphanumeric-sort",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "alphanumeric-sort",
   "main": "alphanumeric-sort.js",
   "scripts": {
