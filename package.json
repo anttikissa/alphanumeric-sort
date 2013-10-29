@@ -1,0 +1,16 @@
+{
+  "name": "alphanumeric-sort",
+  "version": "0.0.0",
+  "description": "alphanumeric-sort",
+  "main": "alphanumeric-sort.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "alphanumeric",
+    "natural",
+    "sort"
+  ],
+  "author": "Antti Sykäri",
+  "license": "BSD-2-Clause"
+}
